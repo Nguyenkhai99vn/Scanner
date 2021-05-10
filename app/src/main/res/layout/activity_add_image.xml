@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddImage">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/top"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Add Image"
+            android:textSize="20dp"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="add one or more images to the file"
+            android:textSize="14dp"
+            android:layout_marginTop="5dp"
+            android:textColor="#BC820E"
+            android:layout_marginBottom="5dp"/>
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rccv_Image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_above="@id/botton"
+        android:layout_centerHorizontal="true"
+        android:background="@color/white"
+        android:layout_margin="5dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:id="@+id/botton"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/bg0"
+            android:padding="0dp"
+            android:text="Finish"
+            android:textSize="18dp"
+            android:textColor="#1241D3"/>
+    </RelativeLayout>
+
+</RelativeLayout>

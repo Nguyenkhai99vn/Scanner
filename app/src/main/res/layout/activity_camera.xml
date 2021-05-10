@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/viewFinder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="#CB000000"
+        android:layout_marginBottom="10dp">
+        <Button
+            android:id="@+id/closeCamera"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/close" />
+        <TextView
+            android:id="@+id/auto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Auto"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/flashCamera"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/flash" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rlt3">
+            <Button
+                android:id="@+id/btn_document"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DOCUMENT"
+                android:background="@color/bg0"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="25dp"
+                android:textSize="18dp"
+                android:visibility="visible"
+                android:textColor="@color/type"/>
+            <Button
+                android:id="@+id/btn_word"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TO WORD"
+                android:background="@color/bg0"
+                android:layout_centerInParent="true"
+                android:textSize="18dp"
+                android:textColor="@color/type"/>
+
+        <Button
+            android:id="@+id/btn_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="25dp"
+            android:background="@color/bg0"
+            android:text="TO TEXT"
+            android:textColor="@color/type"
+            android:textSize="18dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/rlt3"
+        android:backgroundTint="#CC000000"
+        android:padding="15dp">
+        <Button
+            android:id="@+id/flipCamera"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="30dp"
+            android:background="@drawable/flip" />
+        <Button
+            android:id="@+id/camera_capture_button"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/take_a_shot" />
+        <ImageView
+            android:id="@+id/iv_capture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/view_img" />
+    </RelativeLayout>
+
+</RelativeLayout>

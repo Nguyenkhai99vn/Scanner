@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="170dp">
+<ImageView
+    android:layout_width="120dp"
+    android:layout_height="160dp"
+    android:src="@drawable/mot"
+    android:id="@+id/image_Layout"
+    android:layout_marginBottom="10dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"/>
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/selectl"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/done"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"/>
+</RelativeLayout>
