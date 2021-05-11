@@ -22,7 +22,6 @@ import kotlinx.android.synthetic.main.activity_add_image.*
 import kotlinx.android.synthetic.main.activity_itemfile.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_menu.*
-import kotlinx.android.synthetic.main.fragment_bottonsheet.*
 import okhttp3.*
 import java.io.File
 import java.text.SimpleDateFormat
@@ -124,7 +123,7 @@ class MainActivity : AppCompatActivity() {
         arrsheet.add(item_sheet(R.drawable.file_pdf, "Conver to PDF", R.drawable.right))
         arrsheet.add(item_sheet(R.drawable.file_word, "Conver to WORD", R.drawable.right))
         arrsheet.add(item_sheet(R.drawable.file_txt, "Conver to TXT", R.drawable.right))
-        val myBottonSheetFragment = MyBottonSheetFragment(arrsheet,
+        val myBottonSheetFragment = BtnSheetSelectConvertFragment(arrsheet,
                 object : IClickBtnSheetListener {
                     override fun clickItemSheet(itemSheet: item_sheet) {
                         Toast.makeText(this@MainActivity, itemSheet.content, Toast.LENGTH_SHORT).show()

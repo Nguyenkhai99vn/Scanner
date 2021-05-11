@@ -28,11 +28,11 @@ class layout_footer_adapter(private val list: List<Layout> ,private val num : In
             when (num) {
                 2 -> {
                     var tvNum: TextView = itemView.tv_footer
-                    tvNum.text = layout.footer?.text?.text
+                    tvNum.text = layout.layoutID.toString()
                 }
                 1 -> {
                     var tvNum: TextView = itemView.tv_footer
-                    tvNum.text = layout.footer?.text?.text
+                    tvNum.text = layout.layoutID.toString()
                 }
             }
         }

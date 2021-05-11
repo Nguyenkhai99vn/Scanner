@@ -18,7 +18,7 @@ open class TextObject : RealmObject() {
         Text.textColor =textColor
         Text.textAlignment = Position.values()[textAlignment]
         Text.other = other
-        return text as Text
+        return Text
     }
 
     fun setReamlObject(textObj : Text?){

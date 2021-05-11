@@ -14,7 +14,7 @@ open class HeaderObject : RealmObject() {
         var pageHeader = PageHeader()
         pageHeader.type = PageHeaderType.values()[type]
         pageHeader.imageURL = imageURL
-        pageHeader.text = text?.getObject() ?: Text()
+        pageHeader.text = text?.getObject()!!
         pageHeader.alignment = Position.values()[alignment]
         return pageHeader
     }

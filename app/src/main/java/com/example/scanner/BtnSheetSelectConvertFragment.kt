@@ -9,16 +9,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.scanner.Adapter.sheet_adapter
 import com.example.scanner.Interface.IClickBtnSheetListener
+import com.example.scanner.Model.item_image_camera
 import com.example.scanner.Model.item_sheet
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class MyBottonSheetFragment(var list: List<item_sheet>, val iClickBtnSheetListener: IClickBtnSheetListener): BottomSheetDialogFragment() {
+class BtnSheetSelectConvertFragment(var list: List<item_sheet>, val iClickBtnSheetListener: IClickBtnSheetListener): BottomSheetDialogFragment() {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
 
         val bottonSheetDialog: BottomSheetDialog = super.onCreateDialog(savedInstanceState) as BottomSheetDialog
-        val view : View = LayoutInflater.from(context).inflate(R.layout.fragment_bottonsheet,null)
+        val view : View = LayoutInflater.from(context).inflate(R.layout.fragment_bottonsheet_convert,null)
         bottonSheetDialog.setContentView(view)
         val rccv : RecyclerView = view.findViewById(R.id.rccv_sheet1)
         val itemAdapter = sheet_adapter(list , object : IClickBtnSheetListener {
