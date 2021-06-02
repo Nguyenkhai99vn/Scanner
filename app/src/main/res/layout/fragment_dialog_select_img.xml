@@ -24,6 +24,6 @@
         android:layout_marginBottom="10dp"
         android:paddingLeft="10dp"
         android:background="@drawable/bg_sheet"
-        tools:listitem="@layout/itemsheet"
+        tools:listitem="@layout/item_sheet_camera_img"
         />
 </LinearLayout>

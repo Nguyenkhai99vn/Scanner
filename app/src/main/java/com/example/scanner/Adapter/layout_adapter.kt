@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.scanner.Interface.IClickItemLayoutListener
+import com.example.scanner.Interface.IClickItemLayout
 import com.example.scanner.Model.item_layout
 import com.example.scanner.R
 import kotlinx.android.synthetic.main.itemimage.view.*
 import kotlinx.android.synthetic.main.itemlayout.view.*
 import java.util.zip.Inflater
 
-class layout_adapter( val list : List<item_layout> ) : RecyclerView.Adapter<layout_adapter.viewholder>() {
+class layout_adapter( val list : List<item_layout> , val iClickItemLayout: IClickItemLayout ) : RecyclerView.Adapter<layout_adapter.viewholder>() {
     class viewholder(v : View) : RecyclerView.ViewHolder(v) {
         val image : ImageView = v.image_Layout
         val select : ImageView = v.selectl
@@ -28,16 +28,19 @@ class layout_adapter( val list : List<item_layout> ) : RecyclerView.Adapter<layo
         val currenitem = list[position]
         holder.image.setImageResource(currenitem.image)
         holder.select.setImageResource(currenitem.selectL)
+
         holder.itemView.setOnClickListener {
+            iClickItemLayout.onclick(currenitem,position)
             if (currenitem.isSelected == false)
             {
-                holder.select.visibility  = View.VISIBLE
                 currenitem.isSelected = true
+                holder.select.visibility  = View.VISIBLE
             }else{
-                holder.select.visibility  = View.GONE
                 currenitem.isSelected = false
+                holder.select.visibility  = View.GONE
             }
         }
+
     }
 
     override fun getItemCount(): Int = list.size

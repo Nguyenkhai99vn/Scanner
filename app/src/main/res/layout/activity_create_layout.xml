@@ -49,13 +49,150 @@
             android:textSize="18dp"
             android:textColor="#1241D3"/>
     </RelativeLayout>
-    <fragment
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/top"
         android:layout_above="@id/botton"
-        android:layout_margin="5dp"
-        class="com.example.scanner.list_Layout"
-        tools:layout="@layout/fragment_list_layout"
-        android:id="@+id/center"/>
+        android:orientation="vertical"
+        tools:context=".list_Layout">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/rlt1"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="conver page layouts"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/text1"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#D5D5D5"
+                    android:id="@+id/line1"
+                    android:layout_below="@id/text1">
+                </ImageView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line1"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/rccv_1">
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_below="@id/rlt1"
+                android:id="@+id/rlt2"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="basic page layouts"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/text2"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#D5D5D5"
+                    android:id="@+id/line2"
+                    android:layout_below="@id/text2">
+                </ImageView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line2"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/rccv_2">
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/rlt3"
+                android:layout_below="@id/rlt2"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="advance page layouts"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/text3"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#D5D5D5"
+                    android:id="@+id/line3"
+                    android:layout_below="@id/text3">
+                </ImageView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/line3"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/rccv_3">
+                </androidx.recyclerview.widget.RecyclerView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:id="@+id/rlt4"
+                android:layout_below="@id/rlt3"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="custom page layout"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:layout_margin="10dp"
+                    android:id="@+id/text4"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/text4">
+                    <ImageView
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/selecter"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create layout"
+                        android:textColor="#062CB5"
+                        android:textSize="20dp"
+                        android:layout_margin="10dp" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

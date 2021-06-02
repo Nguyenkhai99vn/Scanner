@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:layout_marginLeft="10dp"
+        android:hint="Fill the text here..."
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:visibility="gone"
+        android:background="@color/bg0"
+        android:id="@+id/tv_text"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentTop="true"
+        android:hint="Fill the text header here..."
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:background="@color/bg0"
+        android:visibility="visible"
+        android:id="@+id/tv_textheader"/>
+    <ImageView
+        android:id="@+id/img_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:layout_below="@id/tv_textheader"
+        android:layout_above="@id/tv_textfooter"
+        android:src="@drawable/groupadd"
+        android:scaleType="center"/>
+
+    <EditText
+        android:id="@+id/tv_textfooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg0"
+        android:gravity="center"
+        android:hint="Fill the text footer here..."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:visibility="visible" />
+
+</LinearLayout>

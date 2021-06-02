@@ -3,13 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
     android:padding="20dp">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialogmenu"
+        android:padding="20dp">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
+        android:id="@+id/rlt_camera"
         android:background="@drawable/bg_sheet_camera_img">
         <ImageView
             android:layout_width="50dp"
@@ -26,5 +31,31 @@
             android:layout_marginLeft="50dp"
             android:textSize="24dp"
             android:hint="Open Camera"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/rlt_galery"
+        android:layout_below="@+id/rlt_camera"
+        android:background="@drawable/bg_sheet_camera_img">
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/img_avatar2"
+            android:src="@drawable/demo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_name2"
+            android:textColor="@color/xam"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/img_avatar2"
+            android:layout_marginLeft="50dp"
+            android:textSize="24dp"
+            android:hint="Open Galery"/>
+    </RelativeLayout>
     </RelativeLayout>
 </RelativeLayout>

@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
                         val id = itemSheet.content
                         when (id) {
                             "Conver to PDF" -> {
-                                val intent = Intent(this@MainActivity, edit_Layout::class.java)
+                                val intent = Intent(this@MainActivity, CameraActivity::class.java)
                                 var isSelect : Int = 1
                                 intent.putExtra("convert", isSelect)
                                 startActivity(intent);

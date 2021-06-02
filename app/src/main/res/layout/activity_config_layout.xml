@@ -219,106 +219,118 @@
                         android:layout_centerInParent="true"
                         android:textColor="@color/black"/>
                 </RelativeLayout>
+
                 <LinearLayout
-                    android:layout_width="320dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/rltl3"
                     android:id="@+id/rltl4"
-                    android:orientation="horizontal"
-                    android:weightSum="3"
+                    android:layout_width="320dp"
+                    android:layout_height="79dp"
+                    android:layout_below="@id/rltl3"
                     android:layout_centerHorizontal="true"
-                    android:padding="10dp"
                     android:layout_marginBottom="15dp"
-                    android:background="@drawable/bg_edt_config">
+                    android:background="@drawable/bg_edt_config"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:weightSum="3">
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1">
+
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:layout_centerHorizontal="true"
-                            android:textSize="18dp"
-                            android:text="From page"
                             android:id="@+id/tv_frompage"
-                            android:textColor="@color/black" />
-                        <EditText
-                            android:layout_width="50dp"
-                            android:layout_height="30dp"
-                            android:id="@+id/edt_frompage"
-                            android:textSize="18dp"
-                            android:hint="0"
-                            android:gravity="center"
-                            android:textColor="@color/black"
-                            android:background="@drawable/bg_edt_config"
-                            android:layout_below="@+id/tv_frompage"
-                            android:layout_marginLeft="10dp"/>
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_below="@+id/tv_frompage"
-                            android:layout_marginTop="5dp"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="10dp"
-                            android:src="@drawable/edittext"/>
-                    </RelativeLayout>
-                    <RelativeLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-                        <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="5dp"
-                            android:textSize="18dp"
                             android:layout_centerHorizontal="true"
-                            android:text="To page"
-                            android:id="@+id/tv_topage"
-                            android:textColor="@color/black" />
+                            android:layout_marginBottom="5dp"
+                            android:text="From page"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
                         <EditText
+                            android:id="@+id/edt_frompage"
                             android:layout_width="50dp"
                             android:layout_height="30dp"
-                            android:id="@+id/edt_topage"
-                            android:textSize="18dp"
-                            android:hint="0"
-                            android:gravity="center"
-                            android:textColor="@color/black"
+                            android:layout_below="@+id/tv_frompage"
+                            android:layout_marginLeft="10dp"
                             android:background="@drawable/bg_edt_config"
+                            android:gravity="center"
+                            android:hint="0"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_below="@+id/tv_frompage"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/edittext" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tv_topage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginBottom="5dp"
+                            android:text="To page"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
+                        <EditText
+                            android:id="@+id/edt_topage"
+                            android:layout_width="50dp"
+                            android:layout_height="30dp"
                             android:layout_below="@+id/tv_topage"
-                            android:layout_marginLeft="10dp"/>
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/bg_edt_config"
+                            android:gravity="center"
+                            android:hint="0"
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_below="@+id/tv_topage"
-                            android:layout_marginTop="5dp"
                             android:layout_alignParentRight="true"
+                            android:layout_marginTop="5dp"
                             android:layout_marginRight="10dp"
-                            android:src="@drawable/edittext"/>
+                            android:src="@drawable/edittext" />
                     </RelativeLayout>
+
                     <RelativeLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        android:gravity="center">
+
                         <TextView
+                            android:id="@+id/tv_totalpage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="5dp"
-                            android:textSize="18dp"
                             android:text="Total page"
-                            android:id="@+id/tv_totalpage"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/black"
+                            android:textSize="18dp" />
+
                         <TextView
+                            android:id="@+id/edt_totalpage"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/edt_totalpage"
-                            android:textSize="20dp"
+                            android:layout_below="@+id/tv_totalpage"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginTop="2dp"
                             android:text="0"
-                            android:layout_centerHorizontal="true"
                             android:textColor="@color/black"
-                            android:layout_below="@+id/tv_totalpage" />
+                            android:textSize="20dp" />
                     </RelativeLayout>
                 </LinearLayout>
                 <ImageView
@@ -465,25 +477,31 @@
                     android:layout_height="30dp"
                     android:layout_toRightOf="@+id/rltl5"
                     android:layout_marginTop="20dp"
+                    android:visibility="visible"
                     android:layout_marginLeft="10dp"
                     android:layout_below="@id/tv_none1"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_noneheader"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@+id/rltl6"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
                     android:layout_marginLeft="10dp"
                     android:layout_below="@id/tv_logo"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_logoheader"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@+id/rltl7"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:visibility="gone"
                     android:layout_below="@id/tv_logotext"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_textheader"/>
             </RelativeLayout>
 
 
@@ -618,24 +636,30 @@
                     android:layout_toRightOf="@+id/rltl8"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:visibility="visible"
                     android:layout_below="@id/tv_nonefooter"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_nonefooter"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@+id/rltl9"
                     android:layout_marginTop="20dp"
+                    android:visibility="gone"
                     android:layout_marginLeft="10dp"
                     android:layout_below="@id/tv_number"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_numfooter"/>
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_toRightOf="@+id/rltl10"
                     android:layout_marginTop="20dp"
                     android:layout_marginLeft="10dp"
+                    android:visibility="gone"
                     android:layout_below="@id/tv_textnumber"
-                    android:src="@drawable/done_ring"/>
+                    android:src="@drawable/done_ring"
+                    android:id="@+id/img_textfooter"/>
             </RelativeLayout>
 
 

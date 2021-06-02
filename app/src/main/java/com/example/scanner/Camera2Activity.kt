@@ -21,17 +21,18 @@ import androidx.camera.core.*
 import 	androidx.camera.core.ImageCapture.OutputFileOptions.Builder
 import androidx.camera.lifecycle.ProcessCameraProvider
 import kotlinx.android.synthetic.main.activity_camera.*
+import kotlinx.android.synthetic.main.activity_camera.viewFinder
+import kotlinx.android.synthetic.main.activity_camera2.*
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.http.Url
 import java.io.File
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.ExecutorService
-typealias LumaListener = (luma: Double) -> Unit
+typealias LumaListenerr = (luma: Double) -> Unit
 
 
-class CameraActivity : AppCompatActivity()  {
+class Camera2Activity : AppCompatActivity()  {
 
     private var imageCapture: ImageCapture? = null
     private lateinit var outputDirectory: File
@@ -39,7 +40,7 @@ class CameraActivity : AppCompatActivity()  {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera)
+        setContentView(R.layout.activity_camera2)
 
         // hide the action bar
         supportActionBar?.hide()
@@ -53,81 +54,29 @@ class CameraActivity : AppCompatActivity()  {
         }
 
         // Set up the listener for take photo button
-        camera_capture_button.setOnClickListener { takePhoto(this) }
+        camera2_capture_button.setOnClickListener { takePhoto(this) }
         outputDirectory = getOutputDirectory()
         cameraExecutor = Executors.newSingleThreadExecutor()
 
-        var type = onType()
 
-        btn_document.setOnClickListener {
-            btn_document.setTextColor(resources.getColor(R.color.white))
-            btn_document.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-            btn_word.setTextColor(resources.getColor(R.color.type))
-            btn_word.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            btn_text.setTextColor(resources.getColor(R.color.type))
-            btn_text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            type =1
-        }
-        btn_word.setOnClickListener {
-            btn_document.setTextColor(resources.getColor(R.color.type))
-            btn_document.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            btn_word.setTextColor(resources.getColor(R.color.white))
-            btn_word.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-            btn_text.setTextColor(resources.getColor(R.color.type))
-            btn_text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            type =2
-        }
-        btn_text.setOnClickListener {
-            btn_document.setTextColor(resources.getColor(R.color.type))
-            btn_document.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            btn_word.setTextColor(resources.getColor(R.color.type))
-            btn_word.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18F)
-            btn_text.setTextColor(resources.getColor(R.color.white))
-            btn_text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-            type =3
-        }
-
-        closeCamera.setOnClickListener {
-            val intent = Intent(this , MainActivity::class.java)
-            finish()
+        iv_capture2.setOnClickListener {
+            val intent = Intent(this , edit_Layout::class.java)
+            intent.putExtra("convert" , 4)
+            val photoFile = File(
+                outputDirectory,
+                SimpleDateFormat(FILENAME_FORMAT, Locale.US
+                ).format(System.currentTimeMillis()) + ".jpg")
+            val savedUri = Uri.fromFile(photoFile)
+            intent.putExtra("adduri" , savedUri)
             startActivity(intent)
         }
-        iv_capture.setOnClickListener {
-//            val photoFile = File(
-//                    outputDirectory,
-//                    SimpleDateFormat(FILENAME_FORMAT, Locale.US
-//                    ).format(System.currentTimeMillis()) + ".jpg")
-//            val savedUri = Uri.fromFile(photoFile)
-            val intent = Intent(this , AddImage::class.java)
-            intent.putExtra("convert" , type)
+        closeCamera2.setOnClickListener {
+            val intent = Intent(this , edit_Layout::class.java)
+            finish()
             startActivity(intent)
         }
 
     }
-    fun onType(): Int{
-        val intent: Intent = getIntent();
-        val isSelect = intent.getIntExtra("convert", 0 );
-        var temp :Int = 0
-        when(isSelect){
-            1->{
-                btn_document.setTextColor(resources.getColor(R.color.white))
-                btn_document.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-                temp =1
-            }
-            2->{
-                btn_word.setTextColor(resources.getColor(R.color.white))
-                btn_word.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-                temp =2
-            }
-            3->{
-                btn_text.setTextColor(resources.getColor(R.color.white))
-                btn_text.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20F)
-                temp =3
-            }
-
-        }
-        return  temp
-        }
 
     private fun takePhoto(context: Context) {
         // Get a stable reference of the modifiable image capture use case
@@ -141,6 +90,7 @@ class CameraActivity : AppCompatActivity()  {
 
         // Create output options object which contains file + metadata
         val outputOptions = ImageCapture.OutputFileOptions.Builder(photoFile).build()
+
         // Set up image capture listener, which is triggered after photo has
         // been taken
         imageCapture.takePicture(
@@ -153,12 +103,11 @@ class CameraActivity : AppCompatActivity()  {
                 val savedUri = Uri.fromFile(photoFile)
 
                 // set the saved uri to the image view
-                iv_capture.visibility = View.VISIBLE
-                iv_capture.setImageURI(savedUri)
+                iv_capture2.visibility = View.VISIBLE
+                iv_capture2.setImageURI(savedUri)
                 val msg = "Photo capture succeeded: $savedUri"
                 Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
                 Log.d(TAG, msg)
-
 
             }
         })
@@ -184,7 +133,7 @@ class CameraActivity : AppCompatActivity()  {
             val imageAnalyzer = ImageAnalysis.Builder()
                     .build()
                     .also {
-                        it.setAnalyzer(cameraExecutor, LuminosityAnalyzer { luma ->
+                        it.setAnalyzer(cameraExecutor, LuminosityAnalyzerr { luma ->
                             Log.d(TAG, "Average luminosity: $luma")
                         })
                     }
@@ -246,7 +195,7 @@ class CameraActivity : AppCompatActivity()  {
         }
     }
 }
-private class LuminosityAnalyzer(private val listener: LumaListener) : ImageAnalysis.Analyzer {
+private class LuminosityAnalyzerr(private val listener: LumaListenerr) : ImageAnalysis.Analyzer {
 
     private fun ByteBuffer.toByteArray(): ByteArray {
         rewind()    // Rewind the buffer to zero

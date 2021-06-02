@@ -19,7 +19,10 @@ import com.example.scanner.API.workService
 import com.example.scanner.Adapter.addimage_adapter
 import com.example.scanner.Adapter.layout_adapter
 import com.example.scanner.Interface.IClickItemImageListener
+import com.example.scanner.Model.ModelToPDF.Cell
+import com.example.scanner.Model.ModelToPDF.Layout
 import com.example.scanner.Model.item_image
+import io.realm.Realm
 import kotlinx.android.synthetic.main.activity_add_image.*
 import kotlinx.android.synthetic.main.fragment_list_layout.*
 import okhttp3.MediaType
@@ -32,19 +35,24 @@ import java.io.File
 
 class AddImage : AppCompatActivity() {
     val arrImageUri = ArrayList<String>()
+    lateinit var uri : String
+    var isSelect = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_image)
+        val intent: Intent = getIntent();
+        isSelect = intent.getIntExtra("convert", 0 );
         requestListImage()
         btn_finish.setOnClickListener {
             uploadImage(arrImageUri)
-            val intent: Intent = Intent(this , MainActivity::class.java)
-            startActivity(intent)
+            if (isSelect != 1){
+                val intent: Intent = Intent(this , MainActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
     private fun uploadImage(arrdirec: ArrayList<String>) {
-        val intent: Intent = getIntent();
-        val isSelect = intent.getIntExtra("convert", 0 );
+
         var listPath = ArrayList<MultipartBody.Part>()
         for (i in 0..(arrdirec.count() -1))
         {
@@ -56,6 +64,16 @@ class AddImage : AppCompatActivity() {
         val retrofit = workService().retrofit()
         val uploadImage : workAPI = retrofit.create(workAPI::class.java)
         when(isSelect) {
+            1-> {
+                val intent = Intent(this, create_layout::class.java)
+                intent.putExtra("uri" , arrdirec[0])
+//                var isSelect = ArrayList<String>()
+//                for (i in 0..requestListImage().count()-1){
+//                    isSelect.add(requestListImage()[i])
+//                }
+//                intent.putExtra("Cell", isSelect)
+                startActivity(intent);
+            }
             2 -> {
                 val call: Call<String> = uploadImage.uploadImageToWord(listPath)
                 call.enqueue(object : Callback<String> {
@@ -67,7 +85,6 @@ class AddImage : AppCompatActivity() {
                             dowloadImage(urlDowload)
                         }
                     }
-
                     override fun onFailure(call: Call<String>, t: Throwable) {
                         Log.e("Response fail", t.localizedMessage)
                     }
@@ -121,7 +138,7 @@ class AddImage : AppCompatActivity() {
         rccv_Image.adapter = addimage_adapter(arrImage, object : IClickItemImageListener{
             override fun clickItemimage(itemImage: item_image) {
                 for (i in 0..(readFile.count()-1)) {
-                    if (itemImage.uri == readFile[i].path ) {
+                    if (itemImage.uri == readFile[i].path) {
                         if (itemImage.isSelected == false){
                             arrImageUri.add(readFile[i].path)
                         }else if (itemImage.isSelected == true){
