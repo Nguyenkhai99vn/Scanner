@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"    android:visibility="visible"
+    android:id="@+id/rlt_header">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/img_header01"
+        android:visibility="gone"
+        android:src="@drawable/logogo"
+        android:layout_margin="10dp" />
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/img_header02"
+        android:visibility="visible"
+        android:layout_centerInParent="true"
+        android:src="@drawable/logogo"
+        android:layout_margin="10dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/edt_header"
+        android:visibility="gone"
+        android:layout_toRightOf="@id/img_header01"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:hint="Page header text"
+        android:background="@color/bg0"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
+<androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/rlt_header"
+    android:layout_above="@id/rlt_footer"
+    android:id="@+id/rccv_content"/>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:layout_alignParentBottom="true"
+    android:visibility="visible"
+    android:id="@+id/rlt_footer">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_alignParentTop="true" />
+    <EditText
+        android:id="@+id/edt_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:hint="Page footer text"
+        android:background="@color/bg0"
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/tv_footer01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:visibility="gone"
+        android:hint="1"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/tv_footer02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"
+        android:hint="1"
+        android:textSize="24dp"
+        android:textColor="@color/black"
+        />
+</RelativeLayout>
+</RelativeLayout>

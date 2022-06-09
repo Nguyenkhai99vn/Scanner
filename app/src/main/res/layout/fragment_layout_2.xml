@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp">
+        <EditText
+            android:id="@+id/edt_titleCover"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Document Title"
+            android:textColor="@color/black"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:lines="3"
+            android:layout_centerHorizontal="true"
+            android:background="@color/bg0"/>
+        <EditText
+            android:id="@+id/edt_subTitleCover"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Document subTitle"
+            android:textColor="@color/black"
+            android:layout_below="@id/edt_titleCover"
+            android:textSize="22dp"
+            android:lines="3"
+            android:layout_centerHorizontal="true"
+            android:background="@color/bg0"/>
+        <ImageView
+            android:id="@+id/img_imageCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_launcher_background"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_below="@id/edt_subTitleCover"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
